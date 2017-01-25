@@ -1,4 +1,5 @@
-# README
+# rails-bootstrap
+Rails 5, Devise authentication, Haml, Rspec and Twitter bootstrap CSS framework integrated sample project. 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -22,3 +23,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
