@@ -21,8 +21,3 @@ production:
   username: root
   password: <%= ENV["DATA_BASE_PASSWORD"] %>
   database: <%= ENV["DATA_BASE"] %>
-default: &default
-  adapter: mysql2  
-  encoding: utf8  
-  pool: 5
-  timeout: 5000 
