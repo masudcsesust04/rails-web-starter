@@ -1,0 +1,28 @@
+default: &default
+  adapter: mysql2  
+  encoding: utf8  
+  pool: 5
+  timeout: 5000  
+
+development:
+  <<: *default
+  username: root
+  password: root
+  database: rails_bootstrap_development
+
+test:
+  <<: *default
+  username: root
+  password: root
+  database: rails_bootstrap_test
+
+production:
+  <<: *default
+  username: root
+  password: <%= ENV["DATA_BASE_PASSWORD"] %>
+  database: <%= ENV["DATA_BASE"] %>
+default: &default
+  adapter: mysql2  
+  encoding: utf8  
+  pool: 5
+  timeout: 5000 

@@ -1,0 +1,69 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:http => {:equiv => "X-UA-Compatible"}, :content => "IE=edge"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "author", :content => ""}
+    %title Rails Bootstrap
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    <!-- Fixed navbar -->
+    %nav.navbar.navbar-default.navbar-fixed-top
+      %div.container
+        %div.navbar-header
+          %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => "collapse", :target=> "#navbar"}, :aria => {:expanded => "false", :controls => "navbar"}}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Rails Bootstrap
+
+        %div#navbar.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#about"} About
+            %li
+              %a{:href => "#contact"} Contact
+
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}, :role => "button", :aria => {:haspopup =>"true", :expanded => "false"}}
+                Dropdown
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href=>"#"} Action
+                %li
+                  %a{:href=>"#"} Another action
+                %li
+                  %a{:href=>"#"} Something else here
+                %li.divider{:role=>"separator"}
+                %li.dropdown-header Nav header
+                %li
+                  %a{:href=>"#"} Separated link
+                %li
+                  %a{:href=>"#"}> One more separated link
+
+    <!-- container -->
+    %div.container
+      - if notice
+        .notice.alert-info
+          = notice
+      - elsif alert
+        .alert.alert-danger
+          = alert
+
+      = yield
+
+    <!-- footer -->
+    %footer
+      %p.text-center
+        &copy; Copyright 2017
