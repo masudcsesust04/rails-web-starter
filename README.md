@@ -24,4 +24,26 @@ Things you may want to cover:
 
 * ...
 
+## Screen-shots
+
+1. Sign in
+
+![alt text](https://github.com/masudcsesust04/screen-shots/blob/master/rails-boot-starter/sign-in.jpg "Sign in")
+
+2. Sign up
+
+![alt text](https://github.com/masudcsesust04/screen-shots/blob/master/rails-boot-starter/sign-up.jpg "Sign up")
+
+3. Forgot password
+
+![alt text](https://github.com/masudcsesust04/screen-shots/blob/master/rails-boot-starter/forgot-password.jpg "Forgot password")
+
+4. Dashboard
+
+![alt text](https://github.com/masudcsesust04/screen-shots/blob/master/rails-boot-starter/dashboard.jpg "Dashboard")
+
+5. Sign out
+
+![alt text](https://github.com/masudcsesust04/screen-shots/blob/master/rails-boot-starter/sign-out.jpg "Sign out")
+
 
