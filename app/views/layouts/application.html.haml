@@ -22,17 +22,23 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Rails Bootstrap
+          %a.navbar-brand{:href => "#"} Rails boot starter
 
         %div#navbar.navbar-collapse.collapse
           - unless user_signed_in?
             %ul.nav.navbar-nav
-              %li.active
+              %li
                 = link_to ' Home', '#'
               %li
-                = link_to 'About', '#about'
-              %li
                 = link_to 'Contact', '#contact'
+              %li
+                = link_to 'About', '#about'
+
+            %ul.nav.navbar-nav.navbar-right
+              %li{class: "#{controller_name == 'registrations' ? 'active' : ''}"}
+                = link_to 'Sign up', new_user_registration_path, method: :get
+              %li{class: "#{controller_name == 'sessions' ? 'active' : ''}"}
+                = link_to 'Sign in', new_user_session_path, method: :get
           - else
             %ul.nav.navbar-nav
               %li.active
