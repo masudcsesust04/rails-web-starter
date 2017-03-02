@@ -1,4 +1,4 @@
-# rails-bootstrap
+# Rails boot starter application
 Rails 5, Devise authentication, Haml, Rspec and Twitter bootstrap CSS framework integrated sample project. 
 
 This README would normally document whatever steps are necessary to get the
