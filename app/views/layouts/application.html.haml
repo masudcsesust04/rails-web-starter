@@ -1,14 +1,14 @@
 !!!
-%html{:lang => "en"}
+%html{ lang: 'en' }
   %head
-    %meta{:charset => "utf-8"}
-    %meta{:http => {:equiv => "X-UA-Compatible"}, :content => "IE=edge"}
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-    %meta{:name => "description", :content => ""}
-    %meta{:name => "author", :content => ""}
-    %title Rails Bootstrap
+    %meta{ charset: 'utf-8' }
+    %meta{ http: { equiv: 'X-UA-Compatible' }, content: 'IE=edge' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    %meta{ name: 'description', content: '' }
+    %meta{ name: 'author', content: '' }
+    %title Rails boot strarter
     = favicon_link_tag 'favicon.ico'
-    = stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
@@ -17,15 +17,17 @@
     %nav.navbar.navbar-default.navbar-fixed-top
       %div.container
         %div.navbar-header
-          %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => "collapse", :target=> "#navbar"}, :aria => {:expanded => "false", :controls => "navbar"}}
+          %button.navbar-toggle.collapsed{ type: 'button',
+                                            data: { toggle: 'collapse', target: '#navbar' },
+                                            aria: { expanded: 'false', controls: 'navbar' } }
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Rails boot starter
+          %a.navbar-brand{ href: '#' } Rails boot starter
 
-        %div#navbar.navbar-collapse.collapse
-          - unless user_signed_in?
+        %div.navbar-collapse.collapse#navbar
+          - if !user_signed_in?
             %ul.nav.navbar-nav
               %li
                 = link_to ' Home', '#'
@@ -35,9 +37,9 @@
                 = link_to 'About', '#about'
 
             %ul.nav.navbar-nav.navbar-right
-              %li{class: "#{controller_name == 'registrations' ? 'active' : ''}"}
+              %li{ class: controller_name.to_s == 'registrations' ? 'active' : '' }
                 = link_to 'Sign up', new_user_registration_path, method: :get
-              %li{class: "#{controller_name == 'sessions' ? 'active' : ''}"}
+              %li{ class: controller_name.to_s == 'sessions' ? 'active' : '' }
                 = link_to 'Sign in', new_user_session_path, method: :get
           - else
             %ul.nav.navbar-nav
@@ -50,17 +52,20 @@
 
             %ul.nav.navbar-nav.navbar-right
               %li.dropdown
-                %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}, :role => "button", :aria => {:haspopup =>"true", :expanded => "false"}}
-                  = "Welcome, #{current_user.email}"
+                %a.dropdown-toggle{ href: '#',
+                                    data: { toggle: 'dropdown' },
+                                    role: 'button',
+                                    aria: { haspopup: 'true', expanded: 'false' } }
+                  Welcome, #{current_user.email}
                   %span.caret
                 %ul.dropdown-menu
                   %li
                     = link_to 'Action', '#'
                   %li
                     = link_to 'Settings', '#settings'
-                  %li.divider{:role => 'separator'}
+                  %li.divider{ role: 'separator' }
                   %li
-                    = link_to 'Sign out', destroy_user_session_path, :method => :delete
+                    = link_to 'Sign out', destroy_user_session_path, method: :delete
 
     <!-- container -->
     %div.container

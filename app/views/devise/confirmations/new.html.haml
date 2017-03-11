@@ -6,7 +6,9 @@
 
   .form-group
     = f.label :email
-    = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+    = f.email_field :email,
+                    autofocus: true,
+                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
 
   = f.submit 'Resend confirmation instructions', class: 'btn btn-primary'
 

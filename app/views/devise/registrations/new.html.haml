@@ -10,9 +10,9 @@
 
   .form-group
     = f.label :password
-    -if @minimum_password_length
-      %em= "(#{@minimum_password_length} characters minimum)"
-    = f.password_field :password, autocomplete: "off", class: 'form-control'
+    - if @minimum_password_length
+      %em (#{@minimum_password_length} characters minimum)
+    = f.password_field :password, autocomplete: 'off', class: 'form-control'
 
   .form-group
     = f.label :password_confirmation
@@ -20,4 +20,4 @@
 
   = f.submit 'Submit', class: 'btn btn-primary'
 
--#= render 'devise/shared/links'
+-# = render 'devise/shared/links'

@@ -8,7 +8,7 @@
   .form-group
     = f.label :password, 'New password'
     - if @minimum_password_length
-      %em= "(#{@minimum_password_length} characters minimum)"
+      %em (#{@minimum_password_length} characters minimum)
     = f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control'
 
   .form-group
@@ -17,4 +17,4 @@
 
   = f.submit 'Change my password', class: 'btn btn-default'
 
--#= render 'devise/shared/links'
+-# = render 'devise/shared/links'
