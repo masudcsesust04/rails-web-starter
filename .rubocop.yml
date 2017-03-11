@@ -8,22 +8,21 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
 
+Metrics/LineLength:
+  Max: 120
+
 Style/Encoding:
   EnforcedStyle: never
   Enabled: true
 
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: always
+  EnforcedStyle: never
 
-Style/IndentHeredoc:
-  EnforcedStyle: powerpack
+Documentation:
+  Enabled: false
 
 Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
     - '**/*.rake'
-    - 'spec/**/*.rb'
-
-AmbiguousBlockAssociation:
-  Exclude:
     - 'spec/**/*.rb'
