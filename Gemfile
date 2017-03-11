@@ -23,6 +23,9 @@ gem 'devise', '~> 4.2'
 # Use haml, HTML abstraction markup language
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
+# writing clean and consistent HAML
+gem 'haml_lint', '~> 0.23.0'
+
 # Use haml, as default template engine when scaffold
 gem 'haml-rails', '~> 0.9.0'
 

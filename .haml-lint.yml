@@ -1,0 +1,10 @@
+linters:
+  ImplicitDiv:
+    enabled: false
+    severity: error
+
+  LineLength:
+    max: 120
+
+  MultilinePipe:
+    enabled: false

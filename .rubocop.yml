@@ -1,0 +1,29 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Style/Encoding:
+  EnforcedStyle: never
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/IndentHeredoc:
+  EnforcedStyle: powerpack
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
