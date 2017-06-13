@@ -24,6 +24,11 @@ Things you may want to cover:
 
 * ...
 
+## Using this template
+
+    $ rails new MyApplication \
+      -m https://raw.githubusercontent.com/masudcsesust04/rails-boot-starter/master/rails-boot-starter-template.rb
+
 ## Screen-shots
 
 1. Sign in
