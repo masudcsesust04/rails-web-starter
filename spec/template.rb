@@ -1,0 +1,7 @@
+copy_file 'controllers/home_controller_spec.rb'
+copy_file 'factories/users_factory.rb'
+copy_file 'models/user_spec.rb'
+copy_file 'rails_helper.rb'
+copy_file 'routes/routes_spec.rb'
+copy_file 'spec_helper.rb'
+copy_file 'support/factory_girl.rb'

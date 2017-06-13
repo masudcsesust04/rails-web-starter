@@ -1,0 +1,12 @@
+apply 'app/template.rb'
+apply 'config/template.rb'
+apply 'db/template.rb'
+apply 'spec/template.rb'
+
+copy_file '.gitignore'
+copy_file '.haml-lint.yml'
+copy_file '.rspec'
+copy_file '.rubocop.yml'
+copy_file 'config.ru'
+copy_file 'Gemfile'
+copy_file 'Rakefile'
