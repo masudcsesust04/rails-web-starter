@@ -1,7 +1,5 @@
-copy_file 'spec/controllers/home_controller_spec.rb'
-copy_file 'spec/factories/users_factory.rb'
-copy_file 'spec/models/user_spec.rb'
-copy_file 'spec/rails_helper.rb'
-copy_file 'spec/routes/routes_spec.rb'
-copy_file 'spec/spec_helper.rb'
-copy_file 'spec/support/factory_girl.rb'
+Dir["#{@template_source}/spec/**/*.*"].each do |file|
+  dest = file
+  dest = dest.gsub("#{@template_source}/", '')
+  copy_file(file, dest) unless file.end_with? 'template.rb'
+end
