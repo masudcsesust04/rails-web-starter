@@ -1,7 +1,7 @@
 require 'fileutils'
 require 'shellwords'
 
-RAILS_REQUIREMENT = '~> 5.0.0'
+RAILS_REQUIREMENT = '~> 5.0.2'
 
 def apply_template!
   template_source = add_template_repository_to_source_path
