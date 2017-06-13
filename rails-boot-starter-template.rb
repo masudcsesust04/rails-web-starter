@@ -4,13 +4,36 @@ require 'shellwords'
 RAILS_REQUIREMENT = '~> 5.0.0'
 
 def apply_template!
-  @template_source = add_template_repository_to_source_path
+  template_source = add_template_repository_to_source_path
   assert_minimum_rails_version
   cleanup_files
-  apply 'app/template.rb'
-  apply 'config/template.rb'
-  apply 'db/template.rb'
-  apply 'spec/template.rb'
+
+  Dir["#{template_source}/app/**/*.*"].each do |file|
+    dest = file
+    dest = dest.gsub("#{template_source}/", '')
+    copy_file(file, dest) unless file.end_with? 'template.rb'
+  end
+
+  Dir["#{template_source}/config/**/*.*"].each do |file|
+    dest = file
+    dest = dest.gsub("#{template_source}/", '')
+    copy_file(file, dest) unless file.end_with? 'template.rb'
+  end
+
+  Dir["#{template_source}/db/**/*.*"].each do |file|
+    dest = file
+    dest = dest.gsub("#{template_source}/", '')
+    if dest.include? 'migrate'
+      dest = dest.gsub('20170124115250', timestamp = Time.now.strftime('%Y%m%d%H%M%S'))
+    end
+    copy_file(file, dest) unless file.end_with? 'template.rb'
+  end
+
+  Dir["#{template_source}/spec/**/*.*"].each do |file|
+    dest = file
+    dest = dest.gsub("#{template_source}/", '')
+    copy_file(file, dest) unless file.end_with? 'template.rb'
+  end
 
   copy_file '.gitignore'
   copy_file '.haml-lint.yml'
