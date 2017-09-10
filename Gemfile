@@ -65,6 +65,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'rspec-rails', '~> 3.5.2'
   gem 'rspec_api_documentation', '~> 4.9'
+  gem 'pry-rails', '~> 0.3.6'
 end
 
 group :development do
