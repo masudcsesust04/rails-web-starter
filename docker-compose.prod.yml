@@ -1,0 +1,45 @@
+version: '3'
+
+volumes:
+  app-prod-data:
+  mysql-prod-data:
+  public:  
+
+services:
+  prod_db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - .prod.env
+    volumes:
+      - ./mysql-prod-data:/var/lib/mysql  
+    ports:
+      - 3309:3306
+  prod_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    env_file:
+      - .prod.env
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+       - .:/var/www/rails-boot-starter
+    ports:
+      - 3001:3000
+    depends_on:
+      - prod_db
+    links:
+      - prod_db
+  prod_web:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx  
+    env_file:
+      - .prod.env
+    volumes:
+      - ./public:/var/www/rails-boot-starter/public  
+    links:
+      - prod_app
+    ports:
+      - 81:80
+    
