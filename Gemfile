@@ -59,6 +59,8 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'activerecord-nulldb-adapter', '~> 0.3.9'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -70,10 +72,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6.1'
   gem 'rspec_api_documentation', '~> 4.9'
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
-end
-
-group :production do
-  gem 'activerecord-nulldb-adapter', '~> 0.3.9'
 end
 
 group :development do
