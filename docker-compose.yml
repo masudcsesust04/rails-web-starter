@@ -1,8 +1,8 @@
 version: '3'
 
 volumes:
-  app-data:
-  mysql-data:
+  app_data:
+  mysql_data:
     
 services:
   db: 
@@ -13,14 +13,16 @@ services:
     ports:
       - "3308:3306"
     volumes:  
-      - ./mysql-data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec puma -C config/puma.rb  
     env_file:
       - .dev.env
-    command: bundle exec puma -C config/puma.rb
     volumes:
-      - .:/var/www/rails-boot-starter
+      - .:/rails-boot-starter
     ports:
       - "3000:3000"
     depends_on:

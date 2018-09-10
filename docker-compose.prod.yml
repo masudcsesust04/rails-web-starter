@@ -3,9 +3,7 @@ volumes:
   mysql_data: {} 
 services:  
   app:    
-    build:      
-      context: .      
-      dockerfile: ./docker/Dockerfile.prod
+    image: masudcsesust04/rails-starter-app:0.0.1
     env_file:
       - .prod.env    
     depends_on:      
