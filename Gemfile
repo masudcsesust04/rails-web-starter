@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.2'
 gem 'rubocop', '~> 0.47.1'
 
 # bootstrap-sass is a Sass-powered version of Bootstrap 3
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap-sass', '~> 3.4'
 
 # Use Mysql2 to use mysql database
 gem 'mysql2', '~> 0.4.5'
