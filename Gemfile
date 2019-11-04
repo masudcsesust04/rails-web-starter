@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.0.2'
 
 # Use Rubocop as code style checking tool
-gem 'rubocop', '~> 0.47.1'
+gem 'rubocop', '~> 0.48.1'
 
 # bootstrap-sass is a Sass-powered version of Bootstrap 3
 gem 'bootstrap-sass', '~> 3.4'
