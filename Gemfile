@@ -18,7 +18,7 @@ gem 'bootstrap-sass', '~> 3.4'
 gem 'mysql2', '~> 0.4.5'
 
 # Use devise to authentication solution
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 
 # Use haml, HTML abstraction markup language
 gem 'haml', '~> 4.0', '>= 4.0.7'
