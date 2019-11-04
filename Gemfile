@@ -5,32 +5,34 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.5.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.2', '>= 5.2.3'
 
 # Use Rubocop as code style checking tool
-gem 'rubocop', '~> 0.47.1'
+gem 'rubocop', '~> 0.76.0'
 
 # bootstrap-sass is a Sass-powered version of Bootstrap 3
-gem 'bootstrap-sass', '~> 3.4'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 # Use Mysql2 to use mysql database
-gem 'mysql2', '~> 0.4.5'
+gem 'mysql2', '~> 0.4.10'
 
 # Use devise to authentication solution
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Use haml, HTML abstraction markup language
-gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml', '~> 5.1', '>= 5.1.2'
 
 # writing clean and consistent HAML
-gem 'haml_lint', '~> 0.23.0'
+gem 'haml_lint', '~> 0.34.0'
 
 # Use haml, as default template engine when scaffold
-gem 'haml-rails', '~> 0.9.0'
+gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
