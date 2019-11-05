@@ -4,6 +4,9 @@
 # Ignore bundler config.
 .bundle
 
+# Ignore git history
+.history
+
 # Ignore rails default testing
 test
 
