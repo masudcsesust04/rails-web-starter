@@ -50,7 +50,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+# gem 'jbuilder', '~> 2.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -68,6 +68,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5.2'
   gem 'rspec_api_documentation', '~> 4.9'
   gem 'pry-rails', '~> 0.3.6'
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 end
 
 group :development do

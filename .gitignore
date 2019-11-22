@@ -22,11 +22,4 @@ tmp/*
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore database.yml
-config/database.yml
-
-# Ignore .ruby-gemset
-.ruby-gemset
-
-# Ignore .ruby-version
-.ruby-version
+.env
