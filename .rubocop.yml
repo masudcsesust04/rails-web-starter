@@ -11,13 +11,6 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
-Style/Encoding:
-  EnforcedStyle: never
-  Enabled: true
-
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
-
 Documentation:
   Enabled: false
 
@@ -26,3 +19,4 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '**/*.rake'
     - 'spec/**/*.rb'
+    - '**/*.gemspec'
