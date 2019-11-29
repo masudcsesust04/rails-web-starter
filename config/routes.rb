@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   get '/users/sign_in', to: 'devise/sessions#new'
 
   root to: 'home#index'
-  
 end

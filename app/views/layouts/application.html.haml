@@ -4,9 +4,9 @@
     %meta{ charset: 'utf-8' }
     %meta{ http: { equiv: 'X-UA-Compatible' }, content: 'IE=edge' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    %meta{ name: 'description', content: '' }
-    %meta{ name: 'author', content: '' }
-    %title Rails web strarter
+    %meta{ name: 'description', content: 'Simple rails web starter application with devise authentication.' }
+    %meta{ name: 'author', content: 'Md. Masud Rana' }
+    %title RWS: Dashboard
     = favicon_link_tag 'favicon.ico'
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -27,58 +27,38 @@
           %a.navbar-brand{ href: '#' } Rails web starter
 
         %div.navbar-collapse.collapse#navbar
-          - if !user_signed_in?
-            %ul.nav.navbar-nav
-              %li
-                = link_to ' Home', '#'
-              %li
-                = link_to 'Contact', '#contact'
-              %li
-                = link_to 'About', '#about'
+          %ul.nav.navbar-nav
+            %li{ class: controller_name.to_s == 'home' ? 'active' : '' }
+              = link_to 'Dashboard', '/'
+            %li{ class: controller_name.to_s == 'projects' ? 'active' : '' }
+              = link_to 'Projects', '#/todos'
+            %li{ class: controller_name.to_s == 'users' ? 'active' : '' }
+              = link_to 'Users', '#users'
 
-            %ul.nav.navbar-nav.navbar-right
-              %li{ class: controller_name.to_s == 'registrations' ? 'active' : '' }
-                = link_to 'Sign up', new_user_registration_path, method: :get
-              %li{ class: controller_name.to_s == 'sessions' ? 'active' : '' }
-                = link_to 'Sign in', new_user_session_path, method: :get
-          - else
-            %ul.nav.navbar-nav
-              %li.active
-                = link_to 'Dashboard', '/'
-              %li
-                = link_to 'Menu 1', '#menu1'
-              %li
-                = link_to 'Menu 2', '#menu2'
-
-            %ul.nav.navbar-nav.navbar-right
-              %li.dropdown
-                %a.dropdown-toggle{ href: '#',
-                                    data: { toggle: 'dropdown' },
-                                    role: 'button',
-                                    aria: { haspopup: 'true', expanded: 'false' } }
-                  Welcome, #{current_user.email}
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to 'Action', '#'
-                  %li
-                    = link_to 'Settings', '#settings'
-                  %li.divider{ role: 'separator' }
-                  %li
-                    = link_to 'Sign out', destroy_user_session_path, method: :delete
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#',
+                                  data: { toggle: 'dropdown' },
+                                  role: 'button',
+                                  aria: { haspopup: 'true', expanded: 'false' } }
+                Welcome, #{current_user.email}
+                %span.caret
+              %ul.dropdown-menu
+                %li= link_to 'Profile', '#'
+                %li= link_to 'Settings', '#settings'
+                %li.divider{ role: 'separator' }
+                %li= link_to 'Sign out', destroy_user_session_path, method: :delete
 
     <!-- container -->
     %div.container
       - if notice
-        .alert.alert-info
-          = notice
+        .alert.alert-info= notice
       - elsif alert
-        .alert.alert-danger
-          = alert
+        .alert.alert-danger= alert
 
       = yield
 
     <!-- footer -->
     %footer
       %p.text-center
-        &copy; Copyright 2017
+        &copy; Copyright 2019
