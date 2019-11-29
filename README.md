@@ -1,4 +1,4 @@
-# Rails boot starter application
+# Rails web starter application
 Rails 5, Devise authentication, Haml, Rspec and Twitter bootstrap CSS framework integrated sample project. 
 
 ### Versions
