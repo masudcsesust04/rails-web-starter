@@ -26,6 +26,16 @@ $ bundle exec rake db:seed
 $ bundle exec rake db:test:prepare
 ```
 
+### Run application
+```
+$ bundle exec rails s
+```
+
+### Enter rails console
+```
+$ bundle exec rails c
+```
+
 ### Run the rspec test suite
 ```
 # to run all of the test suite
