@@ -2,7 +2,7 @@
 %hr
 
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
+  = render 'devise/shared/error_messages', resource: resource
   = f.hidden_field :reset_password_token
 
   .form-group
@@ -17,4 +17,4 @@
 
   = f.submit 'Change my password', class: 'btn btn-default'
 
--# = render 'devise/shared/links'
+= render 'devise/shared/links'
