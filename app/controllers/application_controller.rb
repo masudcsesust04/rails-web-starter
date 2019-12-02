@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -6,8 +8,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_layout
-    unless current_user.present?
-      'login'
-    end
+    return if current_user.present?
+
+    'login'
   end
 end
