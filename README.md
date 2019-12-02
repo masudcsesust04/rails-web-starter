@@ -22,10 +22,8 @@ $ bundle exec rake db:create:all
 
 ### Database initialization
 ```
-# import seed data
+$ bundle exec rake db:migrate
 $ bundle exec rake db:seed
-
-# prepare test database
 $ bundle exec rake db:test:prepare
 ```
 
