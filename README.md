@@ -7,7 +7,10 @@ Rails 5, Devise authentication, Haml, Rspec and Twitter bootstrap CSS framework 
 - MySQL 5.7
 
 ### System dependencies
-- Add here, If you use any dependent service over the application development.
+```
+$ gem install bundler
+$ bundle install --path vendor/bundle
+```
 
 ### Configuration
 - Make a copy of ```.env.sample``` file as ```.env``` and update DB configuration as your db host, name etc.
