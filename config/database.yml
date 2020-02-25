@@ -15,4 +15,10 @@ test:
   <<: *default
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  database: <%= ENV['DB_NAME_TEST'] %>  
+  database: <%= ENV['DB_NAME_TEST'] %>
+  
+production:
+  <<: *default
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME_TEST'] %>      

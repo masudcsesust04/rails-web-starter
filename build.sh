@@ -7,3 +7,4 @@ USERNAME=masudcsesust04
 IMAGE=rails-starter-app
 
 docker build -t $USERNAME/$IMAGE:latest .
+
