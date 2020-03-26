@@ -1,8 +1,6 @@
 # Ignore ide config.
 .idea/*
 
-.DS_Store
-
 # Ignore bundler config.
 .bundle
 
