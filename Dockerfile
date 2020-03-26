@@ -1,7 +1,7 @@
 # Base image:
 FROM ruby:2.6.5
 
-MAINTAINER MD MASUD RANA "masudcsesust04@gmail.com"
+LABEL maintainer="MD. MASUD RANA masudcsesust04@gmail.com"
 
 # Install dependencies
 RUN apt-get update -qq \
@@ -14,8 +14,10 @@ RUN apt-get update -qq \
 		dnsutils \
 		zip \
 		unzip \
-		wget
-
+		wget \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+  
 # Set an environment variable where the Rails app is installed inside of Docker image
 ENV RAILS_ROOT /var/www/rails-web-starter
 RUN mkdir -p $RAILS_ROOT 
@@ -33,7 +35,7 @@ COPY Gemfile.lock Gemfile.lock
 COPY VERSION .
 
 # Install bundler gem
-RUN gem install bundler
+RUN gem install bundler:2.1.4
 
 # Install gems
 RUN bundle install --jobs 20 --retry 5 --without development test 

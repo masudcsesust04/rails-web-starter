@@ -7,7 +7,7 @@ USERNAME=masudcsesust04
 IMAGE=rails-starter-app
 
 # ensure we're up to date
-git pull origin masud/docker
+git pull origin master
 
 # bump version
 #d ocker run --rm -v "$PWD":/app masudcsesust04/bump patch
@@ -20,12 +20,13 @@ echo "version: $version"
 
 # tag it
 git add -A
-git commit -m "version $version"
-git tag -a "$version" -m "version $version"
-git push origin masud/docker
+git commit -m "Release version $version"
+git tag -a "v$version" -m "Relaase version $version"
+git push origin master
 git push --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 
 # push images to docker hub repository
 docker push $USERNAME/$IMAGE:latest
 docker push $USERNAME/$IMAGE:$version
+

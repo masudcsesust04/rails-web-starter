@@ -6,5 +6,5 @@ USERNAME=masudcsesust04
 # image name
 IMAGE=rails-starter-app
 
-docker build -t $USERNAME/$IMAGE:latest .
+docker build --compress -t $USERNAME/$IMAGE:latest .
 
