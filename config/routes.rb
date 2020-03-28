@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
 
   devise_for :users
@@ -5,5 +8,7 @@ Rails.application.routes.draw do
 
   get '/users/sign_in', to: 'devise/sessions#new'
 
+  mount Sidekiq::Web => '/sidekiq'
+  
   root to: 'home#index'
 end

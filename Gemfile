@@ -61,6 +61,9 @@ gem 'jquery-rails'
 
 gem 'activerecord-nulldb-adapter', '~> 0.3.9'
 
+gem 'sidekiq', '~> 6.0', '>= 6.0.6'
+gem 'sidekiq-scheduler', '~> 3.0', '>= 3.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
