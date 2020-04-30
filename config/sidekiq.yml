@@ -1,12 +1,20 @@
 :verbose: false
 :concurrency: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 :timeout: 30
-# :queues:
-#   - [low_priority, 1]
-#   - [high_priority, 2] # high priority
+:pidfile: tmp/pids/sidekiq.pid
+:queues:
+  - [critical, 2]
+  - default
+  - low
+
+production:
+  :concurrency: 25
+
+staging:
+  :concurrency: 5
 
 :schedule:
   my_worker:
     cron: '0 */2 * * * *' # Runs every 2 minutes
     class: MyWorker
-    
+
