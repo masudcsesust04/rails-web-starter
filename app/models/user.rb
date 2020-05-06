@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+
+  def active_for_authentication?
+    super and self.allowed_to_log_in?
+  end
 end
