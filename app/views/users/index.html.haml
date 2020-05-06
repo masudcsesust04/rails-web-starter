@@ -17,7 +17,7 @@
     - @users.each do |user|
       %tr
         %td= user.id
-        %td= #user.name
+        %td= user.name
         %td= user.email
         %td= user.created_at.strftime('%Y-%m-%d')
         %td= link_to 'Show', user

@@ -8,16 +8,21 @@
             %li= message
 
     .col-md-12.form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+
+    .col-md-12.form-group
       = f.label :email
       = f.text_field :email, class: 'form-control'
 
-    .col-md-12.form-group
-      = f.label :password
-      = f.text_field :password, class: 'form-control'
+    - unless params[:action] == 'edit'
+      .col-md-12.form-group
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off', class: 'form-control'
 
-    .col-md-12.form-group
-      = f.label :password_confirmation
-      = f.text_field :password_confirmation, class: 'form-control'
+      .col-md-12.form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
 
     .col-md-12.form-group
       = f.submit 'Submit', class: 'btn btn-info'
