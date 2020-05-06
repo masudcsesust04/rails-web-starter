@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   def active_for_authentication?
-    super and self.allowed_to_log_in?
+    super && self.allowed_to_log_in?
   end
 end
