@@ -33,7 +33,7 @@
             %li{ class: controller_name.to_s == 'projects' ? 'active' : '' }
               = link_to 'Projects', '#/todos'
             %li{ class: controller_name.to_s == 'users' ? 'active' : '' }
-              = link_to 'Users', '#users'
+              = link_to 'Users', users_path
 
           %ul.nav.navbar-nav.navbar-right
             %li.dropdown

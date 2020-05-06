@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @user.email
+
+%p
+  %b Create date:
+  = @user.created_at.strftime('%Y-%m-%d')
+
+= link_to 'Edit', edit_user_path(@user), class: 'btn btn-info'
+= link_to 'Back', users_path, class: 'btn btn-default'
+

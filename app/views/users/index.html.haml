@@ -1,0 +1,30 @@
+- content_for :title, 'Users'
+
+%h1 Listing users
+
+%table.table
+  %thead
+    %tr
+      %th{ width: '10%' } #
+      %th{ width: '25%' } Name
+      %th{ width: '25%' } Email
+      %th{ width: '25%' } Create Date
+      %th{ width: '5%' }
+      %th{ width: '5%' }
+      %th{ width: '5%' }
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= #user.name
+        %td= user.email
+        %td= user.created_at.strftime('%Y-%m-%d')
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to '+ New User', new_user_path, class: 'btn btn-info'
+
