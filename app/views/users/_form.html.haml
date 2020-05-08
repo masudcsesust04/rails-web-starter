@@ -1,0 +1,28 @@
+.row
+  = form_for @user do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |message|
+            %li= message
+
+    .col-md-12.form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+
+    .col-md-12.form-group
+      = f.label :email
+      = f.text_field :email, class: 'form-control'
+
+    - unless params[:action] == 'edit'
+      .col-md-12.form-group
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off', class: 'form-control'
+
+      .col-md-12.form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+
+    .col-md-12.form-group
+      = f.submit 'Submit', class: 'btn btn-info'
