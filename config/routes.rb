@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
-  resources :users
+  resources :users do
+    collection do
+      get   :change_password
+      patch :update_password
+    end
+  end
 
   root to: 'home#index'
 end

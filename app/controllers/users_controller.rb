@@ -46,6 +46,24 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
+  # GET /users/change_password
+  def change_password
+    @user = current_user
+  end
+
+  # PATCH /users/update_password
+  def update_password
+    @user = current_user
+
+    if @user.update_with_password(user_params)
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      redirect_to root_path, notice: 'Your password changed successfully.'
+    else
+      render :change_password
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -55,7 +73,7 @@ class UsersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
   end
 end
 
