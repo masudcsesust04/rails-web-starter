@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   has_many :user_roles
-  has_many :roles, through: :user_roles
+  has_many :roles, through: :user_roles, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

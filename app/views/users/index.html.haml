@@ -6,9 +6,10 @@
   %thead
     %tr
       %th{ width: '10%' } #
-      %th{ width: '25%' } Name
-      %th{ width: '25%' } Email
-      %th{ width: '25%' } Create Date
+      %th{ width: '20%' } Name
+      %th{ width: '20%' } Email
+      %th{ width: '20%' } Role
+      %th{ width: '20%' } Create Date
       %th{ width: '5%' }
       %th{ width: '5%' }
       %th{ width: '5%' }
@@ -19,6 +20,7 @@
         %td= user.id
         %td= user.name
         %td= user.email
+        %td= user.roles.map(&:name)
         %td= user.created_at.strftime('%Y-%m-%d')
         %td= link_to 'Show', user
         %td= link_to 'Edit', edit_user_path(user)

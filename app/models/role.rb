@@ -4,4 +4,8 @@ class Role < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
+
+  scope :published, -> () { where(published: true) }
+  scope :unpublished, -> () { where(published: false) }
+  scope :not_admin, -> () { where.not(id: self.first) }
 end
