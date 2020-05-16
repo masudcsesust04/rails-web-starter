@@ -47,6 +47,6 @@ class Ability
   end
 
   def self.user_role
-    %w(User Role)
+    %w[User Role]
   end
 end
