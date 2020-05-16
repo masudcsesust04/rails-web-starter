@@ -30,5 +30,23 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    if user.has_role?(:administrator)
+      can :manage, :all
+    elsif user.has_role?(:moderator)
+      abilities = []
+      abilities.concat(Ability.user_role())
+      abilities = abilities.map(&:constantize)
+
+      can :read, abilities
+      cannot :create, abilities
+      can :read, :all
+    else
+      can :read, :all
+    end
+  end
+
+  def self.user_role
+    %w(User Role)
   end
 end

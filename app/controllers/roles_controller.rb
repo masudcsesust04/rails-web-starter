@@ -2,6 +2,9 @@ class RolesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_role, only: [:show, :edit, :update, :destroy]
 
+  load_and_authorize_resource
+  check_authorization
+
   # GET /roles
   def index
     @roles = Role.all

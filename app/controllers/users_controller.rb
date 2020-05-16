@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
 
+  load_and_authorize_resource
+  check_authorization
+
   # GET /users
   def index
     @users = User.all
