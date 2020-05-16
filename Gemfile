@@ -20,6 +20,9 @@ gem 'mysql2', '~> 0.4.10'
 # Use devise to authentication solution
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
+# Use cancancan to authorization solution
+gem 'cancancan', '~> 3.1'
+
 # Use haml, HTML abstraction markup language
 gem 'haml', '~> 5.1', '>= 5.1.2'
 

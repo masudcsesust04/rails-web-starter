@@ -1,3 +1,5 @@
+- role = @user.roles.first.present? ? @user.roles.first.id : ''
+
 .row
   = form_for @user do |f|
     - if @user.errors.any?
@@ -14,6 +16,10 @@
     .col-md-12.form-group
       = f.label :email
       = f.text_field :email, class: 'form-control'
+
+    .col-md-12.form-group
+      = f.label :roles, 'Role'
+      = f.select(:roles, options_for_select(Role.not_admin.published.collect{|role| [role.name, role.id]}, role), { include_blank: 'Select' }, { class: 'form-control' })
 
     - unless params[:action] == 'edit'
       .col-md-12.form-group

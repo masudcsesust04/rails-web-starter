@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
 
+  load_and_authorize_resource
+  check_authorization
+
   # GET /users
   def index
     @users = User.all
@@ -23,6 +26,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+    assign_user_role()
 
     if @user.save
       redirect_to users_url, notice: 'User was successfully created.'
@@ -33,6 +37,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    @user.roles.destroy_all
+    assign_user_role()
+
     if @user.update(user_params)
       redirect_to users_url, notice: 'User was successfully updated.'
     else
@@ -74,6 +81,16 @@ class UsersController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
+  end
+
+  # assign user role for create and update
+  def assign_user_role
+    role_id = params[:user][:roles].to_i
+
+    unless role_id.zero?
+      role = Role.find(role_id)
+      @user.roles << role
+    end
   end
 end
 
