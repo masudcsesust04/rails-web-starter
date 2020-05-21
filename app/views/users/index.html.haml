@@ -22,9 +22,10 @@
         %td= user.email
         %td= user.roles.map(&:name)
         %td= user.created_at.strftime('%Y-%m-%d')
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        - unless user.has_role?(:administrator)
+          %td= link_to 'Show', user
+          %td= link_to 'Edit', edit_user_path(user)
+          %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

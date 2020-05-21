@@ -49,8 +49,13 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    unless @user.has_role?(:administrator)
+      @user.destroy
+      redirect_to users_url, notice: 'User was successfully destroyed.'
+      return
+    end
+
+    redirect_to users_url, notice: 'Sorry, You are not allowed to delete administrator user.'
   end
 
   # GET /users/change_password
