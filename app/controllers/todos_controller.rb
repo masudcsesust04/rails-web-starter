@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class TodosController < ApplicationController
 
   before_action :authenticate_user!
