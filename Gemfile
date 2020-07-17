@@ -19,6 +19,7 @@ gem 'mysql2', '~> 0.4.10'
 
 # Use devise to authentication solution
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'devise-security', '~> 0.14.3'
 
 # Use cancancan to authorization solution
 gem 'cancancan', '~> 3.1'
