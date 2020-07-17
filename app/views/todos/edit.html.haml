@@ -1,0 +1,11 @@
+- content_for :title, 'Edit todo'
+
+%h1 Editing todo
+%hr
+
+= render 'form'
+
+= link_to 'Show', @todo
+\|
+= link_to 'Back', todos_path
+
