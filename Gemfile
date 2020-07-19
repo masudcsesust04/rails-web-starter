@@ -15,7 +15,7 @@ gem 'rubocop', '~> 0.76.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 # Use Mysql2 to use mysql database
-gem 'mysql2', '~> 0.4.10'
+# gem 'mysql2', '~> 0.4.10'
 
 # Use pg to use PostgreSQL database
 gem 'pg', '~> 1.2', '>= 1.2.3'

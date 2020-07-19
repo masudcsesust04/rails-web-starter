@@ -149,10 +149,6 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     mustache (1.1.0)
-    mysql2 (0.4.10)
-    mysql2 (0.4.10-x64-mingw32)
-    mysql2 (0.4.10-x86-mingw32)
-    mysql2 (0.4.10-x86-mswin32-60)
     nio4r (2.5.2)
     nio4r (2.5.2-java)
     nokogiri (1.10.5)
@@ -357,7 +353,6 @@ DEPENDENCIES
   haml_lint (~> 0.34.0)
   jquery-rails
   listen (~> 3.0.5)
-  mysql2 (~> 0.4.10)
   pg (~> 1.2, >= 1.2.3)
   pry-rails (~> 0.3.6)
   puma (~> 3.12)
