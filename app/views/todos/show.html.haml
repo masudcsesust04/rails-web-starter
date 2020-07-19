@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @todo.title
+%p
+  %b Description:
+  = @todo.description
+%p
+  %b Published:
+  = @todo.published
+%p
+  %b Creator:
+  = @todo.creator_id
+%p
+  %b Assigned to:
+  = @todo.assignee_id
+
+= link_to 'Edit', edit_todo_path(@todo)
+\|
+= link_to 'Back', todos_path

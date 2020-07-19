@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :todos
+
   root to: 'home#index'
 end

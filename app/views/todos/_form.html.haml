@@ -1,0 +1,28 @@
+- assignees = User.all.select { |u| u.id != current_user.id }
+- assignees = assignees.collect{ |u| [u.name, u.id] }
+- assignee_id = !@todo.assignee.nil? ? @todo.assignee.id : ''
+
+.row
+  = form_for @todo do |f|
+    - if @todo.errors.any?
+      .col-md-12#error_explanation
+        %h2.text-danger= "#{pluralize(@todo.errors.count, "error")} prohibited this todo from being saved:"
+        %ul
+          - @todo.errors.full_messages.each do |message|
+            %li.text-danger= message
+
+    .col-md-12.form-group
+      = f.label :title
+      = f.text_field :title, class: 'form-control'
+    .col-md-12.form-group
+      = f.label :description
+      = f.text_area :description, class: 'form-control'
+    .col-md-12.form-group
+      = f.label :assignee_id
+      = f.select(:assignee_id, options_for_select(assignees, assignee_id), {:include_blank => 'Select'}, { :class => 'form-control' })
+    .col-md-12.form-group
+      = f.label :published
+      = f.check_box :published
+    .col-md-12.form-group
+      = f.submit 'Submit', class: 'btn btn-default'
+

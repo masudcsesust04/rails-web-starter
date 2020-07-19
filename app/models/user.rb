@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles, dependent: :destroy
+  has_many :todos, foreign_key: :creator_id
 
   # Include default devise modules. Others available are:
   # :confirmable, :omniauthable, :secure_validatable, :session_limitable, :expirable

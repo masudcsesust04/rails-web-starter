@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_033149) do
+ActiveRecord::Schema.define(version: 2020_07_17_122953) do
 
-  create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "old_passwords", force: :cascade do |t|
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_033149) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.boolean "published", default: true
@@ -29,15 +32,24 @@ ActiveRecord::Schema.define(version: 2020_06_10_033149) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "todos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "published"
+    t.integer "creator_id"
+    t.integer "assignee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_roles", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name", limit: 16
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -48,12 +60,13 @@ ActiveRecord::Schema.define(version: 2020_06_10_033149) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", limit: 16
     t.boolean "allowed_to_log_in", default: true
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
     t.datetime "password_changed_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
