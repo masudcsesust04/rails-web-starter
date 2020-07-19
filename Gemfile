@@ -17,6 +17,9 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # Use Mysql2 to use mysql database
 gem 'mysql2', '~> 0.4.10'
 
+# Use pg to use PostgreSQL database
+gem 'pg', '~> 1.2', '>= 1.2.3'
+
 # Use devise to authentication solution
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-security', '~> 0.14.3'
