@@ -24,7 +24,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{ href: '#' } Rails web starter
+          %a.navbar-brand{ href: '/' } Rails web starter
 
         %div.navbar-collapse.collapse#navbar
           %ul.nav.navbar-nav
@@ -47,7 +47,8 @@
                 %span.caret
               %ul.dropdown-menu
                 %li= link_to 'Profile', '#'
-                %li= link_to 'Settings', change_password_users_path
+                %li= link_to 'Change password', change_password_users_path
+                %li= link_to 'Settings', '#'
                 %li.divider{ role: 'separator' }
                 %li= link_to 'Sign out', destroy_user_session_path, method: :delete
 
