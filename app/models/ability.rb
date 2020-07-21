@@ -41,8 +41,10 @@ class Ability
       can :read, abilities
       cannot :create, abilities
       can :read, :all
+      can [:change_password, :update_password], User, user_id: user.id
     else
       can :read, :all
+      can [:change_password, :update_password], User, user_id: user.id
     end
   end
 
