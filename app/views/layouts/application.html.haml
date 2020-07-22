@@ -15,7 +15,7 @@
   %body
     <!-- Fixed navbar -->
     %nav.navbar.navbar-default.navbar-fixed-top
-      %div.container
+      %div.container-fluid
         %div.navbar-header
           %button.navbar-toggle.collapsed{ type: 'button',
                                             data: { toggle: 'collapse', target: '#navbar' },
@@ -53,11 +53,11 @@
                 %li= link_to 'Sign out', destroy_user_session_path, method: :delete
 
     <!-- container -->
-    %div.container
+    %div.container-fluid
       - if notice
-        .alert.alert-info= notice
+        .alert.alert-info.text-center= notice
       - elsif alert
-        .alert.alert-danger= alert
+        .alert.alert-danger.text-center= alert
 
       = yield
 
