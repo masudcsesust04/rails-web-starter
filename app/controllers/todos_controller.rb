@@ -29,6 +29,8 @@ class TodosController < ApplicationController
     @todo.creator = current_user
 
     if @todo.save
+      Notification.create(recipient: @todo.assignee, actor: current_user, action: 'Assigned', notifiable: @todo)
+
       redirect_to todos_url, notice: 'Todo was successfully created.'
     else
       render :new
