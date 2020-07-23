@@ -15,7 +15,7 @@
   %body
     <!-- Fixed navbar -->
     %nav.navbar.navbar-default.navbar-fixed-top
-      %div.container
+      %div.container-fluid
         %div.navbar-header
           %button.navbar-toggle.collapsed{ type: 'button',
                                             data: { toggle: 'collapse', target: '#navbar' },
@@ -52,16 +52,33 @@
                 %li.divider{ role: 'separator' }
                 %li= link_to 'Sign out', destroy_user_session_path, method: :delete
 
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#',
+                                  data: { toggle: 'dropdown' },
+                                  role: 'button',
+                                  aria: { haspopup: 'true', expanded: 'false' } }
+                Notifications
+                %span#notification-count= "(0)"
+                %span.caret
+              %ul.dropdown-menu
+                %li= link_to 'Assigned a todo', '#'
+                %li.divider{ role: 'separator' }
+                %li= link_to 'Hello world', '#'
+                %li.divider{ role: 'separator' }
+                %li= link_to 'Commented on a todo', '#'
+
     <!-- container -->
-    %div.container
+    %div.container-fluid
       - if notice
-        .alert.alert-info= notice
+        .alert.alert-info.text-center= notice
       - elsif alert
-        .alert.alert-danger= alert
+        .alert.alert-danger.text-center= alert
 
       = yield
 
     <!-- footer -->
     %footer
       %p.text-center
-        &copy; Copyright 2019
+        &copy; Copyright 2020
+

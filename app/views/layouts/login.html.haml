@@ -14,15 +14,16 @@
 
   %body
     <!-- container -->
-    %div.container
+    %div.container-fluid
       - if notice
-        .alert.alert-info= notice
+        .alert.alert-info.text-center= notice
       - elsif alert
-        .alert.alert-danger= alert
+        .alert.alert-danger.text-center= alert
 
       = yield
 
     <!-- footer -->
     %footer
       %p.text-center
-        &copy; Copyright 2019
+        &copy; Copyright 2020
+

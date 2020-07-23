@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   end
 
   resources :todos
+  resources :notifications do
+    collection do
+      get   :total_unread
+      post  :mark_as_read
+    end
+  end
 
   root to: 'home#index'
 end
