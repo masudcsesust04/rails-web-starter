@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   resources :todos
   resources :notifications do
     collection do
-      post :mark_as_read
+      get   :total_unread
+      post  :mark_as_read
     end
   end
 
