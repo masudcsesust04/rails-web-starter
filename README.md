@@ -10,11 +10,7 @@ Rails 6, Devise authentication, CanCanCan user role based authorization, Rspec a
 ### System dependencies
 ```
 $ gem install bundler
-$ bundle install --path vendor/bundle
-
-$ gem install foreman
-$ gem install rubocop
-
+$ bundle config set --local path vendor/bundle
 $ yarn install
 ```
 
@@ -35,11 +31,9 @@ $ bundle exec rake db:test:prepare
 
 ### Run application
 ```
-$ foreman start -f Procfile.dev
+$ bundle exec foreman start -f Procfile.dev
 ```
-
 or
-
 ```
 $ bash run.sh
 ```
