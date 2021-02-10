@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   layout :set_layout
 
   rescue_from CanCan::AccessDenied do |_exception|
-    redirect_to request.referer, notice: "You have no permission to access!"
+    redirect_to request.referer, notice: 'You have no permission to access!'
   end
 
   protected

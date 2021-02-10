@@ -1,13 +1,12 @@
 class User < ApplicationRecord
-
   has_many :user_roles
   has_many :roles, through: :user_roles, dependent: :destroy
   has_many :todos, foreign_key: :creator_id
 
   # Include default devise modules. Others available are:
   # :confirmable, :omniauthable, :secure_validatable, :session_limitable, :expirable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-    :trackable, :validatable, :lockable, :timeoutable, :password_expirable, :password_archivable
+  devise  :database_authenticatable, :registerable, :recoverable, :rememberable,
+          :trackable, :validatable, :lockable, :timeoutable, :password_expirable, :password_archivable
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
@@ -27,5 +26,4 @@ class User < ApplicationRecord
   def has_role?(role_sym)
     roles.any? { |r| r.name.underscore.to_sym == role_sym }
   end
-
 end

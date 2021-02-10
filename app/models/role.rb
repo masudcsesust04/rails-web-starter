@@ -7,5 +7,5 @@ class Role < ApplicationRecord
 
   scope :published, -> () { where(published: true) }
   scope :unpublished, -> () { where(published: false) }
-  scope :not_admin, -> () { where.not(id: self.first) }
+  scope :not_admin, -> () { where.not(id: first) }
 end
