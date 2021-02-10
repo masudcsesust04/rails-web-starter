@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles, dependent: :destroy
@@ -7,8 +5,8 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :omniauthable, :secure_validatable, :session_limitable, :expirable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable, :validatable, :lockable, :timeoutable, :password_expirable, :password_archivable
+  devise  :database_authenticatable, :registerable, :recoverable, :rememberable,
+          :trackable, :validatable, :lockable, :timeoutable, :password_expirable, :password_archivable
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true

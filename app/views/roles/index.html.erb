@@ -1,0 +1,24 @@
+<% content_for :title, 'Roles' %>
+
+<h1>Roles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Published</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.description %></td>
+        <td><%= role.published %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

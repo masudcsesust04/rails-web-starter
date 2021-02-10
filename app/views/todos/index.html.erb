@@ -1,0 +1,31 @@
+<% content_for :title, 'ToDo' %>
+
+<h1>ToDo list</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Summary</th>
+      <th>Description</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.summary %></td>
+        <td><%= todo.description %></td>
+        <td><%= todo.published %></td>
+        <td><%= link_to 'Show', todo %></td>
+        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %>

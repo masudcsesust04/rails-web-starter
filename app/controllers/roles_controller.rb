@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class RolesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_role, only: [:show, :edit, :update, :destroy]
@@ -58,7 +56,7 @@ class RolesController < ApplicationController
     @role = Role.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
+  # Only allow a list of trusted parameters through.
   def role_params
     params.require(:role).permit(:name, :description, :published)
   end

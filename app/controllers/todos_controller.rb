@@ -1,11 +1,9 @@
-# frozen_string_literal: true
 class TodosController < ApplicationController
-
   before_action :authenticate_user!
+  before_action :set_todo, only: [:show, :edit, :update, :destroy]
+
   load_and_authorize_resource
   check_authorization
-
-  before_action :set_todo, only: %i[show edit update destroy]
 
   # GET /todos
   def index
@@ -13,7 +11,8 @@ class TodosController < ApplicationController
   end
 
   # GET /todos/1
-  def show; end
+  def show
+  end
 
   # GET /todos/new
   def new
@@ -21,15 +20,15 @@ class TodosController < ApplicationController
   end
 
   # GET /todos/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /todos
   def create
     @todo = Todo.new(todo_params)
-    @todo.creator = current_user
 
     if @todo.save
-      redirect_to todos_url, notice: 'Todo was successfully created.'
+      redirect_to @todo, notice: 'Todo was successfully created.'
     else
       render :new
     end
@@ -57,8 +56,8 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
+  # Only allow a list of trusted parameters through.
   def todo_params
-    params.require(:todo).permit(:title, :description, :published, :assignee_id)
+    params.require(:todo).permit(:summary, :description, :published).merge({ creator_id: current_user.id })
   end
 end

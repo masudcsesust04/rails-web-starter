@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= "RWS: #{yield(:title)}" %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Ruby on rails framework based web starter application.">
+    <meta name="author" content="Md Masud Rana">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= render 'layouts/navbar' %>
+    </header>
+
+    <div class="container-fluid">
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+
+    <main>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <p class="text-center">&copy; Copyright 2019-2021</p>
+    </footer>
+  </body>
+</html>

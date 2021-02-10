@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Role < ApplicationRecord
   has_many :user_roles
   has_many :users, through: :user_roles
@@ -9,5 +7,5 @@ class Role < ApplicationRecord
 
   scope :published, -> () { where(published: true) }
   scope :unpublished, -> () { where(published: false) }
-  scope :not_admin, -> () { where.not(id: self.first) }
+  scope :not_admin, -> () { where.not(id: first) }
 end

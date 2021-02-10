@@ -1,0 +1,18 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  <%= f.label :email, class: 'visually-hidden' %>
+  <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', required: true %>
+  <%= f.label :password, class: 'visually-hidden' %>
+  <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', required: true %>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="checkbox mb-3">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Log in", class: 'w-100 btn btn-lg btn-primary' %>
+<% end %>
+
+<%#= render "devise/shared/links" %>

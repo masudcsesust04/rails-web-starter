@@ -1,0 +1,29 @@
+<% content_for :title, 'Users' %>
+
+<h1>Users</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Allowed to log in</th>
+      <th>Date created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.roles.map(&:name) %></td>
+        <td><%= user.allowed_to_log_in %></td>
+        <td><%= user.created_at.strftime('%Y-%m-%d') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

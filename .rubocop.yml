@@ -5,8 +5,11 @@ AllCops:
     - 'db/**/*'
     - 'lib/**/*'
     - 'spec/**/*'
+    - 'test/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+    - 'bundle/**/*'
+    - 'node_modules/**/*'
 
 Metrics/LineLength:
   Max: 120
