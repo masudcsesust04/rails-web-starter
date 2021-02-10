@@ -1,10 +1,11 @@
 # Rails web starter application
 Rails 6, Devise authentication, CanCanCan user role based authorization, Rspec and Twitter bootstrap 4 CSS framework integrated sample project. 
 
-### Versions
+### Software Versions
 - Ruby 3.0
 - Rails 6.1.1
 - PostgreSQL 12.1
+- NodeJS >= 15.0.1
 
 ### System dependencies
 ```
@@ -13,6 +14,8 @@ $ bundle install --path vendor/bundle
 
 $ gem install foreman
 $ gem install rubocop
+
+$ yarn install
 ```
 
 ### Configuration
@@ -33,6 +36,12 @@ $ bundle exec rake db:test:prepare
 ### Run application
 ```
 $ foreman start -f Procfile.dev
+```
+
+or
+
+```
+$ bash run.sh
 ```
 
 ### Enter rails console
