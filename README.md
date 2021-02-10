@@ -1,15 +1,18 @@
 # Rails web starter application
-Rails 5, Devise authentication, Haml, Rspec and Twitter bootstrap CSS framework integrated sample project. 
+Rails 6, Devise authentication, CanCanCan user role based authorization, Rspec and Twitter bootstrap 4 CSS framework integrated sample project. 
 
 ### Versions
-- Ruby 2.6.5
-- Rails 5.2
-- MySQL 5.7
+- Ruby 3.0
+- Rails 6.1.1
+- PostgreSQL 12.1
 
 ### System dependencies
 ```
 $ gem install bundler
 $ bundle install --path vendor/bundle
+
+$ gem install foreman
+$ gem install rubocop
 ```
 
 ### Configuration
@@ -29,7 +32,7 @@ $ bundle exec rake db:test:prepare
 
 ### Run application
 ```
-$ bundle exec rails s
+$ foreman start -f Procfile.dev
 ```
 
 ### Enter rails console
@@ -57,3 +60,4 @@ $ bundle exec rubocop
 ### Deployment instructions
 - Add capistrano or 
 - Docker deployment instructions 
+

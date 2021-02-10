@@ -7,6 +7,7 @@ AllCops:
     - 'spec/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+    - 'bundle/**/*'
 
 Metrics/LineLength:
   Max: 120
