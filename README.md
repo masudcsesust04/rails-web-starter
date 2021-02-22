@@ -7,6 +7,14 @@ Rails 6, Devise authentication, CanCanCan user role based authorization, Rspec a
 - PostgreSQL 12.1
 - NodeJS >= 15.0.1
 
+### Source code repository
+```
+$ git clone git@github.com:masudcsesust04/rails-web-starter.git
+$ git fetch origin
+$ git checkout -b development origin/development
+```
+Note: Use ```development``` branch for application developmet. Start from this branch to create your feature branches.
+
 ### System dependencies
 ```
 $ gem install bundler
